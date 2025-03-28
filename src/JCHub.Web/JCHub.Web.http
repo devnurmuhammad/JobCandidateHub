@@ -1,0 +1,6 @@
+@JCHub.Web_HostAddress = http://localhost:5007
+
+GET {{JCHub.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
