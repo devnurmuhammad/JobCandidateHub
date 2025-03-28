@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CCD30A30-E28
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCHub.Web", "src\JCHub.Web\JCHub.Web.csproj", "{AC42D8F1-53C9-4309-87C3-324BACAC3CEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCHub.Domain", "src\JCHub.Domain\JCHub.Domain.csproj", "{B774019E-9CD6-4410-9701-4C6D7FFCA413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCHub.Infrastructure", "src\JCHub.Infrastructure\JCHub.Infrastructure.csproj", "{34CAFBD7-6034-4CF6-A925-EAFD6E8922DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JCHub.Application", "src\JCHub.Application\JCHub.Application.csproj", "{A9890F80-E47C-4A51-BDD7-0AC2C833A9FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +23,26 @@ Global
 		{AC42D8F1-53C9-4309-87C3-324BACAC3CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC42D8F1-53C9-4309-87C3-324BACAC3CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC42D8F1-53C9-4309-87C3-324BACAC3CEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B774019E-9CD6-4410-9701-4C6D7FFCA413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B774019E-9CD6-4410-9701-4C6D7FFCA413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B774019E-9CD6-4410-9701-4C6D7FFCA413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B774019E-9CD6-4410-9701-4C6D7FFCA413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CAFBD7-6034-4CF6-A925-EAFD6E8922DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CAFBD7-6034-4CF6-A925-EAFD6E8922DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CAFBD7-6034-4CF6-A925-EAFD6E8922DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CAFBD7-6034-4CF6-A925-EAFD6E8922DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9890F80-E47C-4A51-BDD7-0AC2C833A9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9890F80-E47C-4A51-BDD7-0AC2C833A9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9890F80-E47C-4A51-BDD7-0AC2C833A9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9890F80-E47C-4A51-BDD7-0AC2C833A9FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AC42D8F1-53C9-4309-87C3-324BACAC3CEF} = {CCD30A30-E284-4F4D-B2C2-FB97828CDD85}
+		{B774019E-9CD6-4410-9701-4C6D7FFCA413} = {CCD30A30-E284-4F4D-B2C2-FB97828CDD85}
+		{34CAFBD7-6034-4CF6-A925-EAFD6E8922DB} = {CCD30A30-E284-4F4D-B2C2-FB97828CDD85}
+		{A9890F80-E47C-4A51-BDD7-0AC2C833A9FC} = {CCD30A30-E284-4F4D-B2C2-FB97828CDD85}
 	EndGlobalSection
 EndGlobal
