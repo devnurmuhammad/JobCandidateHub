@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\JCHub.Application\JCHub.Application.csproj" />
     <ProjectReference Include="..\JCHub.Infrastructure\JCHub.Infrastructure.csproj" />
   </ItemGroup>
