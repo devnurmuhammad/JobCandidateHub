@@ -1,5 +1,6 @@
 using JCHub.Infrastructure.Data;
 using JCHub.Infrastructure.Dependencies;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,12 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddDependencies();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
+}
 
 if (app.Environment.IsDevelopment())
 {
