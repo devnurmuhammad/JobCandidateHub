@@ -31,6 +31,7 @@ public class CandidateService : ICandidateService
                     FirstName = dto.FirstName,
                     LastName = dto.LastName,
                     Email = dto.Email,
+                    PhoneNumber = dto.PhoneNumber,
                     LinkedInProfile = dto.LinkedInProfile,
                     GitHubProfile = dto.GitHubProfile,
                     StateId = StateConst.Active,
@@ -48,6 +49,7 @@ public class CandidateService : ICandidateService
                 existCandidate.FirstName = dto.FirstName;
                 existCandidate.LastName = dto.LastName;
                 existCandidate.Email = dto.Email;
+                existCandidate.PhoneNumber = dto.PhoneNumber;
                 existCandidate.LinkedInProfile = dto.LinkedInProfile;
                 existCandidate.GitHubProfile = dto.GitHubProfile;
                 existCandidate.StateId = dto.StateId is 0 ? StateConst.Active : existCandidate.StateId;
@@ -81,6 +83,7 @@ public class CandidateService : ICandidateService
         result.FirstName = candidate.FirstName;
         result.LastName = candidate.LastName;
         result.Email = candidate.Email;
+        result.PhoneNumber = candidate.PhoneNumber;
         result.LinkedInProfile = candidate.LinkedInProfile;
         result.GitHubProfile = candidate.GitHubProfile;
         result.StateId = candidate.StateId;
@@ -113,6 +116,7 @@ public class CandidateService : ICandidateService
                 FirstName = candidate.FirstName,
                 LastName = candidate.LastName,
                 Email = candidate.Email,
+                PhoneNumber = candidate.PhoneNumber,
                 LinkedInProfile = candidate.LinkedInProfile,
                 GitHubProfile = candidate.GitHubProfile,
                 StateId = candidate.StateId,
