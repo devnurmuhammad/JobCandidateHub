@@ -15,7 +15,8 @@ public static class DependencyGroup
             .AddScoped<IUnitOfWork, UnitOfWork>()    
             .AddScoped<ICandidateRepository, CandidateRepository>()
             .AddScoped<ICandidateService, CandidateService>()
-
+    
+            .AddMemoryCache()
             ;
         
         return services;

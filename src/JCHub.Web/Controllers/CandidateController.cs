@@ -15,17 +15,19 @@ public class CandidateController : ControllerBase
         _candidateService = candidateService;
     }
 
-    [HttpGet]
-    public IActionResult GetAll()
-    {
-        return Ok(_candidateService.GetAll());
-    }
-
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CandidateDto candidateDto)
     {
         await _candidateService.CreateOrUpdate(candidateDto);
         return Ok(new { message = "Candidate created/updated successfully" });
+    }
+    
+    // commented, because according to task guide, there is should be only one endpoint (CreateOrUpdate)
+    /*
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        return Ok(_candidateService.GetAll());
     }
 
     [HttpGet("{id:int}")]
@@ -37,4 +39,5 @@ public class CandidateController : ControllerBase
         
         return Ok(candidate);
     }
+    */
 }

@@ -3,16 +3,19 @@ using JCHub.Application.DbInterfaces;
 using JCHub.Application.DTOs;
 using JCHub.Application.IServices;
 using JCHub.Domain.Entities;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace JCHub.Application.Implements.Services;
 
 public class CandidateService : ICandidateService
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IMemoryCache?  _cache;
 
-    public CandidateService(IUnitOfWork unitOfWork)
+    public CandidateService(IUnitOfWork unitOfWork, IMemoryCache? cache = null)
     {
         _unitOfWork = unitOfWork;
+        _cache = cache;
     }
 
     public async Task CreateOrUpdate(CandidateDto dto)
@@ -56,6 +59,9 @@ public class CandidateService : ICandidateService
             }
 
             _unitOfWork.Save();
+            
+            // clear the cache, because the data was changed
+            _cache.Remove("all_candidates");
         }
         catch (Exception ex)
         {
@@ -89,6 +95,13 @@ public class CandidateService : ICandidateService
 
     public IEnumerable<CandidateDto> GetAll()
     {
+        string cacheKey = "all_candidates";
+
+        if (_cache.TryGetValue(cacheKey, out List<CandidateDto> cachedCandidates))
+        {
+            return cachedCandidates;
+        }
+
         var result = new List<CandidateDto>();
         var candidates = _unitOfWork.CandidateRepository.GetAll();
 
@@ -110,6 +123,8 @@ public class CandidateService : ICandidateService
                 Comment = candidate.Comment,
             });
         }
+
+        _cache.Set(cacheKey, result, TimeSpan.FromMinutes(5));
 
         return result;
     }
