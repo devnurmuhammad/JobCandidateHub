@@ -1,4 +1,5 @@
 using JCHub.Infrastructure.Data;
+using JCHub.Infrastructure.Dependencies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,11 +8,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructure(builder.Configuration);
-// builder.Services.AddApplication();
+builder.Services.AddDependencies();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
