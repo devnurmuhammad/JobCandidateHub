@@ -16,7 +16,7 @@ public class UnitOfWork : IUnitOfWork
         _serviceProvider = serviceProvider;
     }
 
-    public ICandidateRepository CandidateRepository { get; }
+    public ICandidateRepository CandidateRepository => GetRepository<ICandidateRepository>();
 
     public TRepository GetRepository<TRepository>() where TRepository : notnull =>
         _serviceProvider.GetRequiredService<TRepository>();
